@@ -9,7 +9,7 @@
   -webkit-filter: invert(10%);
 }
 .friends_suggestions_icon {
-  background-image: url(../../../public/icons/icons11.png);
+  background-image:url(../../../public/icons/icons11.png);
   background-position: 0px -75px;
   background-size: auto;
   width: 20px;
