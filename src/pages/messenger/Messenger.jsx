@@ -23,7 +23,7 @@ export default function Messenger() {
   }, [sendMessage]);
   
   useEffect(() => {
-    socket.current = io("https://reverbaudio.store/trueshare-socket/");
+    socket.current = io("https://trueshare.reverbaudio.store/");
     socket.current.emit("new-user-add", user.id);
     socket.current.on("get-users", (users) => {
       setOnlineUsers(
