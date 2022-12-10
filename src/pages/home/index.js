@@ -8,6 +8,7 @@ import Post from "../../components/post";
 import { useRef } from "react";
 import { getAllPosts } from "../../functions/getAllPosts";
 import LeftHome from "../../components/home/left";
+import RightHome from "../../components/home/right";
 
 export default function Home({ posts, setVisible,dispatch }) {
   const { user } = useSelector((state) => ({ ...state }));
@@ -36,6 +37,7 @@ export default function Home({ posts, setVisible,dispatch }) {
           ))}
         </div>
       </div>
+      <RightHome user={user}/>
     </div>
   );
 }

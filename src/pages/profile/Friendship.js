@@ -81,8 +81,7 @@ export default function Friendship({ friendshipp, profileid }) {
   const handleMessageClick=async(e)=>{
     e.preventDefault();
     const {data} = await newConversation(profileid,user.id,user.token)
-    console.log(data)
-    navigate(`/messenger/${profileid}`)
+    navigate(`/messenger`)
   }
   return (
     <div className="friendship">

@@ -5,8 +5,16 @@ import { Home } from "../../svg";
 import { AdminHomeActive } from "../../svg/adminHomeActive";
 import Users from "./Users";
 import Posts from "./Posts";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 export default function HomeComponent({ type }) {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { admin } = useSelector((state) => ({ ...state }));
+  const logoutHandler = ()=>{
+    dispatch({type:"ADMIN_LOGOUT"})
+    navigate("/admin/login")
+  }
   return (
     <>
       <div className="admin">
@@ -61,16 +69,51 @@ export default function HomeComponent({ type }) {
               </div>
             </Link>
           </div>
+          <div style={{position:"absolute",bottom:"10px"}}>
+            <span
+              onClick={logoutHandler}
+              className={`mmenu_item hover3 ${
+                type === undefined && "active_friends"
+              }`}
+            >
+             <div className="small_circle">
+              <i className="logout_filled_icon"></i>
+            </div>
+              <span>Logout</span>
+            </span>
+          </div>
         </div>
         <div className="admin_right">
           {type === "home" && (
             <div className="homeWrap">
-              <div style={{position:"relative"}}>
-                <Link to="/admin/users" style={{position:"absolute",right:"5px",top:"5px",zIndex:"999",color:"blue"}}>See all users</Link>
+              <div style={{ position: "relative" }}>
+                <Link
+                  to="/admin/users"
+                  style={{
+                    position: "absolute",
+                    right: "5px",
+                    top: "5px",
+                    zIndex: "999",
+                    color: "blue",
+                  }}
+                >
+                  See all users
+                </Link>
                 <Users home />
               </div>
-              <div style={{position:"relative"}}>
-                <Link to="/admin/posts" style={{position:"absolute",right:"5px",top:"5px",zIndex:"999",color:"blue"}}>See all posts</Link>
+              <div style={{ position: "relative" }}>
+                <Link
+                  to="/admin/posts"
+                  style={{
+                    position: "absolute",
+                    right: "5px",
+                    top: "5px",
+                    zIndex: "999",
+                    color: "blue",
+                  }}
+                >
+                  See all posts
+                </Link>
                 <Posts home />
               </div>
             </div>
