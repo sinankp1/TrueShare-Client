@@ -1,5 +1,5 @@
 import "./style.css";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
   ArrowDown,
   Friends,
@@ -8,15 +8,12 @@ import {
   HomeActive,
   Logo,
   Market,
-  Menu,
   Messenger,
-  Notifications,
   Search,
 } from "../../svg";
 import { useSelector } from "react-redux";
 import SearchMenu from "./SearchMenu";
 import { useRef, useState } from "react";
-import AllMenu from "./AllMenu";
 import useClickOutside from "../../helpers/clickOutSide";
 import UserMenu from "./userMenu";
 
@@ -24,13 +21,9 @@ export default function Header({ page }) {
   const { user } = useSelector((user) => ({ ...user }));
   const color = "#65676b";
   const [showSearchMenu, setShowSearchMenu] = useState(false);
-  const [showAllMenu, setShowAllMenu] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
-  const allmenu = useRef(null);
   const usermenu = useRef(null);
-  useClickOutside(allmenu, () => {
-    setShowAllMenu(false);
-  });
+
   useClickOutside(usermenu, () => {
     setShowUserMenu(false);
   });

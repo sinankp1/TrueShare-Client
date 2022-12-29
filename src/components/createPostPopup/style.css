@@ -418,3 +418,12 @@
     width: 100%;
   }
 }
+
+@media (max-width: 520px) {
+  .postBox{
+    width: 90%;
+  }
+  .post_input{
+    width: 100%;
+  }
+}

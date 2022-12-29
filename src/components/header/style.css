@@ -477,7 +477,7 @@ header {
 }
 .searchHistoryItem {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 }
 .exit_circle{
@@ -598,9 +598,6 @@ header {
   }
 }
 @media (max-width: 400px) {
-  .header_right .circle_icon:nth-child(3) {
-    display: none;
-  }
   .mmenu {
     width: 340px;
   }

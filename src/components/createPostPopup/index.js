@@ -93,7 +93,7 @@ export default function CreatePostPopup({
         setError(res);
       }
     } else {
-      console.log("type something bitch.");
+      setError("Please input a valid text or image")
     }
   };
   return (
